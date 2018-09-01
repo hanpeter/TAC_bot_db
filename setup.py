@@ -11,10 +11,14 @@ except Exception:
     # XXX: Intentional pokemon catch to prevent this read from breaking setup.py
     long_description = None
 
+about = {}
+with open(path.join(here, "Discord_Bot_V2", "__version__.py")) as f:
+    exec(f.read(), about)
+
 
 setup(
     name='tac_bot_db',
-    version='0.0.0',
+    version=about['__version__'],
     author='@K0lb3',
     description='Unofficial Discord bot for The Alchemist Code',
     long_description=long_description,
